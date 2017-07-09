@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+   <project name="Hello World Project" default="build-jar">
+
+   <property name="src.dir" value="src"/>
+   <property name="build.dir" value="classes"/>
+
+   <target name="build" description="Compile source java files">
+      <mkdir dir="${build.dir}"/>
+      <javac destdir="${build.dir}" source="1.7" target="1.7">
+         <src path="${src.dir}"/>
+      </javac>
+   </target>
+ 
+   <target name="clean" description="Clean output directories">
+      <delete>
+         <fileset dir="${build.dir}">
+            <include name="**/*.class"/>
+         </fileset>
+      </delete>
+   </target>
+
+   <target name="build-jar">
+    <jar destfile="build/hello.jar"
+      basedir="classes">
+
+      <manifest>
+         <attribute name="Main-Class" value="com.viskytamas.HelloWorld"/>
+      </manifest>
+
+     </jar>
+    </target>
+
+    <target name="unittest">
+        <junit haltonfailure="true" printsummary="true">
+            <classpath location="junit/junit.jar"/>
+            <test name="com.tutorialspoint.UtilsTest"/>
+        </junit>
+    </target>
+
+</project>
