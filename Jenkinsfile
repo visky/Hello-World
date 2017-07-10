@@ -1,13 +1,13 @@
 pipeline {
-    node {
-        checkout scm 
-        echo 'Tamas tries the pipeline'
-    }
+    agent any
 
     stages {
         stage('Build') {
+            node {
+                echo 'Node: Tamas tries the pipeline'
+            }
             steps {
-                echo 'Build step'
+                echo 'outside of Node: Build step'
             }
         }
     }
