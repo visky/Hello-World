@@ -6,7 +6,7 @@ pipeline {
             
             steps {
                 echo 'Build step'
-                mkdir Test
+                bat 'java -version'
             }
         }
     }
