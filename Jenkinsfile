@@ -1,8 +1,9 @@
 pipeline {
-    agent any
+    agent { docker 'openjdk:8-jre' }
 
     stages {
         stage('Build') {
+            
             steps {
                 echo 'Build step'
                 sh 'javac HelloWorld.java'
