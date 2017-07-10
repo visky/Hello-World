@@ -4,10 +4,9 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                node {
-                    echo 'Node: Tamas tries the pipeline'
-                }
-                echo 'outside of Node: Build step'
+                echo 'Build step'
+                sh 'javac HelloWorld.class'
+                sh 'java HelloWorld'
             }
         }
     }
