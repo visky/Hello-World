@@ -6,7 +6,7 @@ pipeline {
             
             steps {
                 echo 'Build step'
-                sh 'mkdir Test'
+                mkdir Test
             }
         }
     }
