@@ -6,7 +6,8 @@ pipeline {
             
             steps {
                 echo 'Build step'
-                bat 'java -version'
+                bat 'javac HelloWorld.java'
+                bat 'java HelloWorld'
             }
         }
     }
