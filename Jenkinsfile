@@ -1,8 +1,14 @@
-node {
-    checkout scm 
-    /* .. snip .. */
+pipeline {
+    node {
+        checkout scm 
+        echo 'Tamas tries the pipeline'
+    }
 
-    echo 'Tamas tries the pipeline'
-
-    echo 'That is all'
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Build step'
+            }
+        }
+    }
 }
